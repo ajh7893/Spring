@@ -32,6 +32,14 @@ public class BoardController {
 	}
 	
 	
+	@GetMapping("/listTest")
+	public void list2(@ModelAttribute("pageDTO") PageDTO dto, Model model) {
+		
+		log.info("dto: "+ dto);
+		model.addAttribute("list",service.getPageList(dto));
+	}
+	
+	
 	@GetMapping("/list")
 	public void list(@ModelAttribute("pageDTO") PageDTO dto, Model model) {
 		log.info("board...list......");
